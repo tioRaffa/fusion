@@ -1,0 +1,23 @@
+{% extends 'global/fusion/base.html' %}
+
+{% load static %}
+
+{% block links %} 
+{% include 'partials/layout/head_index.html' %} 
+{% endblock links %}
+
+
+{% block title %}Fusion App{% endblock title %}
+
+
+{% block content %}
+
+<header id="header-wrap">
+    {% include 'partials/not_found/navbar.html' %}
+  
+    {% include 'partials/not_found/message_error.html' %}
+  </header>
+    
+{% endblock content %}
+
+    
