@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block links %} 
-{% include 'partials/head_index.html' %} 
+{% include 'partials/layout/head_index.html' %} 
 {% endblock links %}
 
 
@@ -15,47 +15,47 @@
 <!-- Header Area wrapper Starts -->
 <header id="header-wrap">
   <!-- Navbar Start -->
-  {% include 'partials/navbar.html' %}
+  {% include 'partials/layout/navbar.html' %}
 
   <!-- Hero Area Start -->
-  {% include 'partials/area_de_inicio.html' %}
+  {% include 'partials/sections/area_de_inicio.html' %}
 </header>
 
 
     <!-- Services Section Start -->
-{% include 'partials/services.html' %}
+{% include 'partials/sections/services.html' %}
 
 
     <!-- About Section start -->
-{% include 'partials/about_section_start.html' %}
+{% include 'partials/sections/about_section_start.html' %}
 
 
     <!-- Features Section Start -->
-{% include 'partials/features_section_start.html' %}
+{% include 'partials/sections/features_section_start.html' %}
 
 
     <!-- Team Section Start -->
-{% include 'partials/team_section.html' %}
+{% include 'partials/sections/team_section.html' %}
 
 
     <!-- Pricing section Start --> 
-{% include 'partials/pricing.html' %}
+{% include 'partials/sections/pricing.html' %}
   
 
     <!-- Testimonial Section Start -->
-{% include 'partials/testimonial.html' %}
+{% include 'partials/sections/testimonial.html' %}
     
     
     <!-- Call To Action Section Start -->
-{% include 'partials/call_to_action.html' %}
+{% include 'partials/sections/call_to_action.html' %}
     
     
     <!-- Contact Section Start -->
-{% include 'partials/contact.html' %}
+{% include 'partials/sections/contact.html' %}
     
     
     <!-- Footer Section Start -->
-{% include 'partials/footer.html' %}
+{% include 'partials/layout/footer.html' %}
     
 
 <!-- Go to Top Link -->
@@ -69,7 +69,7 @@
   <div class="loader" id="loader-1"></div>
 </div>
   
-{% include 'partials/scripts.html' %}
+{% include 'partials/layout/scripts.html' %}
 
 {% endblock content %}
 
