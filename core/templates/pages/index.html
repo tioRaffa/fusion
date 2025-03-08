@@ -1,21 +1,75 @@
 {% extends 'global/core_/base.html' %}
+{% load static %}
 
-
-{% block links %}
-    
+{% block links %} 
+{% include 'partials/head_index.html' %} 
 {% endblock links %}
-    
 
-{% block title %} {% endblock title %}
-    
+
+{% block title %} App Fusion {% endblock title %}
 
 
 {% block content %}
-    
-<h1>hello world!</h1>
 
+
+<!-- Header Area wrapper Starts -->
+<header id="header-wrap">
+  <!-- Navbar Start -->
+    {% include 'partials/navbar.html' %}
+
+      <!-- Hero Area Start -->
+      {% include 'partials/area_de_inicio.html' %}
+    </header>
+
+
+    <!-- Services Section Start -->
+  {% include 'partials/services.html' %}
+
+
+    <!-- About Section start -->
+  {% include 'partials/about_section_start.html' %}
+
+
+    <!-- Features Section Start -->
+  {% include 'partials/features_section_start.html' %}
+
+
+    <!-- Team Section Start -->
+  {% include 'partials/team_section.html' %}
+
+
+    <!-- Pricing section Start --> 
+  {% include 'partials/pricing.html' %}
+  
+
+    <!-- Testimonial Section Start -->
+  {% include 'partials/temostial.html' %}
+    
+    
+    <!-- Call To Action Section Start -->
+  {% include 'partials/call_to_action.html' %}
+    
+    
+    <!-- Contact Section Start -->
+  {% include 'partials/contact.html' %}
+    
+    
+    <!-- Footer Section Start -->
+  {% include 'partials/footer.html' %}
+    
+
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="lni-arrow-up"></i>
+  </a>
+    
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader" id="loader-1"></div>
+  </div>
+    
+{% include 'partials/scripts.html' %}
 
 {% endblock content %}
-    
-
 
