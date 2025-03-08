@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-msp#v0lrfax=^r@zq@*s*#n_1oo+jb^&j)1s-vyir9^(bm_wp1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["/"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "core",
+    
 ]
 
 MIDDLEWARE = [
@@ -76,7 +78,7 @@ WSGI_APPLICATION = "fusion.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": BASE_DIR / "fusion",
+        "NAME": "fusion",
         "USER": "muniz",
         "PASSWORD": "32239292",
         "HOST": "localhost",
