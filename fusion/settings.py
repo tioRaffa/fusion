@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
+    "bootstrap4",
     
 ]
 
@@ -126,6 +127,15 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'fusion@gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = 'fusion'
+DEFAULT_FROM_EMAIL = 'contato@fusion.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

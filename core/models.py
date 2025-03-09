@@ -33,11 +33,11 @@ class ServiceModel(Base):
     
 class CargoModel(Base):
     SERVICE_CHOICES = (
-        ('front_end_developer', 'Front-end Developer'),
-        ('back_end_developer', 'Back-end Developer'),
-        ('front_end_developer', 'Front-end Developer'),
-        ('product_desiner', 'Designer de Produto'),
-        ('lead_designer', 'Designer Lider'),
+        ('Front-end Developer', 'Front-end Developer'),
+        ('Back-end Developer', 'Back-end Developer'),
+        ('Front-end Developer', 'Front-end Developer'),
+        ('Designer de Produto', 'Designer de Produto'),
+        ('Designer Lider', 'Designer Lider'),
     )
     
     service = models.CharField(max_length=50, choices=SERVICE_CHOICES)
@@ -58,5 +58,18 @@ class TeamModel(Base):
     
     def __str__(self):
         return self.user.first_name
+    
+
+class FeaturesModel(Base):
+    ICON_CHOICES  = (
+        ('lni-rocket', 'rocket'),
+        ('lni-laptop-phone', 'laptop e celular'),
+        ('lni-cog', 'engrenagem'),
+        ('lni-leaf', 'folha'),
+        ('lni-layers', 'camadas'),
+    )
+    features = models.CharField(max_length=30)
+    description = models.CharField(max_length=100)
+    icon = models.CharField(choices=ICON_CHOICES)
     
     
