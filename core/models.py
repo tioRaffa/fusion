@@ -31,10 +31,22 @@ class ServiceModel(Base):
         return self.service
     
     
+class CargoModel(Base):
+    SERVICE_CHOICES = (
+        ('front_end_developer', 'Front-end Developer'),
+        ('back_end_developer', 'Back-end Developer'),
+        ('front_end_developer', 'Front-end Developer'),
+        ('product_desiner', 'Designer de Produto'),
+        ('lead_designer', 'Designer Lider'),
+    )
+    
+    service = models.CharField(max_length=50, choices=SERVICE_CHOICES)
+
 class TeamModel(Base):
     
+    
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    service = models.ForeignKey(ServiceModel, on_delete=models.SET_NULL, null=True)
+    service = models.ForeignKey(CargoModel, on_delete=models.SET_NULL, null=True)
     pic_profile = models.ImageField(upload_to='fusion/media/%y/%m/%d', blank=True, null=True)
     facebook = models.CharField(max_length=100, default='#')
     twitter = models.CharField(max_length=100, default='#')

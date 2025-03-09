@@ -1,10 +1,16 @@
 from django.contrib import admin
-from .models import ServiceModel, TeamModel
+from .models import ServiceModel, TeamModel, CargoModel
 
 # Register your models here.
 
 @admin.register(ServiceModel)
 class ServiceModelAdmin(admin.ModelAdmin):
+    list_display = ['service']
+    ordering = ['-id']
+    
+    
+@admin.register(CargoModel)
+class CargoModelAdmin(admin.ModelAdmin):
     list_display = ['service']
     ordering = ['-id']
     
