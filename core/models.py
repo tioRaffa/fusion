@@ -17,7 +17,7 @@ class ServiceModel(Base):
     ICON_CHOICES = (
         ('lni-cog', 'engrenagem'),
         ('lni-stats-up', 'grafico'),
-        ('ni-users', 'users'),
+        ('lni-users', 'users'),
         ('lni-layers', 'design'),
         ('lni-mobile', 'mobile'),
         ('lni-rocket', 'rocket'),
@@ -41,6 +41,9 @@ class CargoModel(Base):
     )
     
     service = models.CharField(max_length=50, choices=SERVICE_CHOICES)
+    
+    def __str__(self):
+        return self.service
 
 class TeamModel(Base):
     
@@ -48,9 +51,10 @@ class TeamModel(Base):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     service = models.ForeignKey(CargoModel, on_delete=models.SET_NULL, null=True)
     pic_profile = models.ImageField(upload_to='fusion/media/%y/%m/%d', blank=True, null=True)
+    bio = models.CharField(max_length=150, default='Sem Biografia')
     facebook = models.CharField(max_length=100, default='#')
     twitter = models.CharField(max_length=100, default='#')
-    instagram = models.CharField(max_length=100, default='#')
+    instagram = models.URLField(max_length=100, default='#')
     
     def __str__(self):
         return self.user.first_name
