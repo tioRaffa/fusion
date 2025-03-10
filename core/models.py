@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 class Base(models.Model):
@@ -73,3 +73,10 @@ class FeaturesModel(Base):
     icon = models.CharField(choices=ICON_CHOICES)
     
     
+class PostModel(Base):
+    user = models.ForeignKey(User, verbose_name=_("usuario"), on_delete=models.CASCADE)
+    title = models.CharField(_("Titulo"), max_length=50)
+    text = models.TextField(_("Texto"))
+    
+    def __str__(self):
+        return self.title

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ServiceModel, TeamModel, CargoModel, FeaturesModel
+from .models import ServiceModel, TeamModel, CargoModel, FeaturesModel, PostModel
 
 # Register your models here.
 
@@ -30,3 +30,14 @@ class FeaturesModelAdmin(admin.ModelAdmin):
     ]
     list_display_links = ['id', 'features']
     ordering = ['-id']
+    
+    
+@admin.register(PostModel)
+class PostModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user', 'title']
+    list_display_links = ['id', 'user']
+    ordering = ['-id']
+    
+    
+    
+    
