@@ -11,8 +11,6 @@ class Base(models.Model):
     class Meta:
         abstract = True
         
-        
-        
 class ServiceModel(Base):
     ICON_CHOICES = (
         ('lni-cog', 'engrenagem'),
@@ -80,3 +78,22 @@ class PostModel(Base):
     
     def __str__(self):
         return self.title
+    
+    
+    
+#   CARRO
+class ChassiModel(Base):
+    numero = models.CharField(_("Número"), max_length=16)
+    
+    def __str__(self):
+        return self.numero
+    
+
+class CarModel(Base):
+    car_brand = models.CharField(_("Marca do Carro"), max_length=50)
+    car_model = models.CharField(_("Modelo do carro"), max_length=50)
+    chassi = models.OneToOneField(ChassiModel, verbose_name=_("Chassi do Carro"), on_delete=models.CASCADE)
+    price = models.DecimalField(_("Preço"), max_digits=8, decimal_places=2)
+    
+    def __str__(self):
+        return self.car_model

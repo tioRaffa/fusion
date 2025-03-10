@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ServiceModel, TeamModel, CargoModel, FeaturesModel, PostModel
+from .models import ServiceModel, TeamModel, CargoModel, FeaturesModel, PostModel, ChassiModel, CarModel
 
 # Register your models here.
 
@@ -39,5 +39,20 @@ class PostModelAdmin(admin.ModelAdmin):
     ordering = ['-id']
     
     
+@admin.register(ChassiModel)
+class ChassiModelAdmin(admin.ModelAdmin):
+    list_display = [
+        'id', 'numero'
+    ]
     
-    
+@admin.register(CarModel)
+class CarModelAdmin(admin.ModelAdmin):
+    list_display = [
+        'id', 'car_brand', 'car_model', 'chassi', 'price'
+    ]
+    list_display_links = [
+        'id', 'car_brand', 'car_model'
+    ]
+    ordering = [
+        '-id'
+    ]
